@@ -13,13 +13,7 @@
 
 
 
-Route::get('/', 'MainController@index');
-
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/document', function () {
-    return view('document');
-});
+Route::get('/', 'MainController@index')->name('index');
+Route::get('/{category?}', 'MainController@indexSub')->name('category');
+Route::get('/about', 'MainController@about')->name('about');
+Route::get('/document', 'MainController@document')->name('document');
